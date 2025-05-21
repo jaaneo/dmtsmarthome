@@ -43,36 +43,42 @@ import Contact from '../components/Contact.astro';
 		<section class="py-16 bg-white dark:bg-gray-900">
 			<div class="container mx-auto px-6">
 				<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10">¿Por qué elegir DMT Smart Home?</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+				<div class="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 snap-x snap-mandatory">
+					<!-- Tarjeta 1 -->
+					<div class="min-w-[260px] max-w-xs flex-1 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer snap-center group">
 						<div class="text-5xl mb-4">🔒</div>
-						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Seguridad y confianza</h3>
-						<p class="text-gray-600 dark:text-gray-300">Trabajamos con protocolos y marcas reconocidas mundialmente. Tu privacidad y la de tu familia es nuestra prioridad.</p>
+						<h3 class="text-xl font-bold text-blue-900 dark:text-white mb-2">Seguridad y confianza</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">Trabajamos con protocolos y marcas reconocidas mundialmente. Tu privacidad y la de tu familia es nuestra prioridad.</p>
 					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+					<!-- Tarjeta 2 -->
+					<div class="min-w-[260px] max-w-xs flex-1 bg-gradient-to-br from-green-100 to-green-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer snap-center group">
 						<div class="text-5xl mb-4">🌐</div>
-						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Redes e internet sin límites</h3>
-						<p class="text-gray-600 dark:text-gray-300">Diseñamos e instalamos redes WiFi y cableadas para cubrir grandes extensiones, sin puntos ciegos ni múltiples redes.</p>
+						<h3 class="text-xl font-bold text-green-900 dark:text-white mb-2">Redes sin límites</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">WiFi y cableado profesional para toda tu propiedad, sin puntos ciegos ni múltiples redes.</p>
 					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+					<!-- Tarjeta 3 -->
+					<div class="min-w-[260px] max-w-xs flex-1 bg-gradient-to-br from-yellow-100 to-yellow-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer snap-center group">
 						<div class="text-5xl mb-4">🏡</div>
-						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Domótica a tu medida</h3>
-						<p class="text-gray-600 dark:text-gray-300">Automatiza luces, climatización, persianas, riego, acceso y más. Todo desde tu móvil o con tu voz.</p>
+						<h3 class="text-xl font-bold text-yellow-700 dark:text-white mb-2">Domótica a tu medida</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">Automatiza luces, clima, persianas, riego, acceso y más. Todo desde tu móvil o con tu voz.</p>
 					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+					<!-- Tarjeta 4 -->
+					<div class="min-w-[260px] max-w-xs flex-1 bg-gradient-to-br from-pink-100 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer snap-center group">
 						<div class="text-5xl mb-4">🔊</div>
-						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Sonido arquitectónico</h3>
-						<p class="text-gray-600 dark:text-gray-300">Instalamos sistemas de audio que se integran con la arquitectura de tu hogar, para una experiencia sonora premium y discreta.</p>
+						<h3 class="text-xl font-bold text-pink-700 dark:text-white mb-2">Sonido arquitectónico</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">Audio premium integrado con la arquitectura de tu hogar, sin cables a la vista.</p>
 					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+					<!-- Tarjeta 5 -->
+					<div class="min-w-[260px] max-w-xs flex-1 bg-gradient-to-br from-purple-100 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer snap-center group">
 						<div class="text-5xl mb-4">🔑</div>
-						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Control de accesos</h3>
-						<p class="text-gray-600 dark:text-gray-300">Soluciones inteligentes para portones, puertas y cámaras. Controla y monitorea quién entra y sale, estés donde estés.</p>
+						<h3 class="text-xl font-bold text-purple-700 dark:text-white mb-2">Control de accesos</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">Portones, puertas y cámaras inteligentes. Controla y monitorea quién entra y sale.</p>
 					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+					<!-- Tarjeta 6 -->
+					<div class="min-w-[260px] max-w-xs flex-1 bg-gradient-to-br from-orange-100 to-orange-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer snap-center group">
 						<div class="text-5xl mb-4">🤝</div>
-						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Acompañamiento total</h3>
-						<p class="text-gray-600 dark:text-gray-300">Te asesoramos desde el diseño hasta la puesta en marcha y soporte postventa. ¡Tu proyecto es nuestro compromiso!</p>
+						<h3 class="text-xl font-bold text-orange-700 dark:text-white mb-2">Acompañamiento total</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">Te asesoramos desde el diseño hasta la puesta en marcha y soporte postventa.</p>
 					</div>
 				</div>
 			</div>
