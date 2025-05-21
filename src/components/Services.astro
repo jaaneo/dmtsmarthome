@@ -1,0 +1,49 @@
+---
+const services = [
+  {
+    title: "Automatización Residencial",
+    description: "Controla iluminación, climatización y electrodomésticos desde tu smartphone.",
+    icon: "🏠",
+    link: "/automatizacion-residencial"
+  },
+  {
+    title: "Seguridad Inteligente",
+    description: "Sistemas de vigilancia y control de acceso para tu tranquilidad.",
+    icon: "🔒",
+    link: "/seguridad-inteligente"
+  },
+  {
+    title: "Eficiencia Energética",
+    description: "Optimiza el consumo energético de tu hogar con soluciones inteligentes.",
+    icon: "⚡",
+    link: "/eficiencia-energetica"
+  },
+  {
+    title: "Integración Total",
+    description: "Conecta todos tus dispositivos en una plataforma unificada.",
+    icon: "🔄",
+    link: "/integracion-total"
+  }
+];
+---
+
+<section id="servicios" class="py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
+      Nuestros Servicios
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service) => (
+        <a href={service.link} class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-700 p-8 hover:shadow-xl dark:hover:shadow-gray-600 transition duration-300 text-center group focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+            {service.title}
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            {service.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section> 

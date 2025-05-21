@@ -1,11 +1,119 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Contact from '../components/Contact.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<!-- HERO MEJORADO -->
+		<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-white min-h-[70vh] flex items-center">
+			<div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+				<div class="md:w-1/2 text-center md:text-left">
+					<h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+						Domótica y Conectividad de Confianza<br />
+						<span class="text-blue-300 dark:text-blue-400">para tu hogar o parcela</span>
+					</h1>
+					<p class="text-lg md:text-xl mb-8 text-blue-100 dark:text-gray-300">
+						Somos especialistas en proyectos de domótica, redes y conectividad. Integramos tecnologías líderes como <b>KNX, Z-Wave, Zigbee, Bluetooth y WiFi</b> para que controles tu hogar de forma segura, eficiente y desde cualquier lugar.<br />
+						<span class="block mt-2">¡Olvídate de tener varias redes WiFi! Creamos una sola red robusta para toda tu propiedad, incluso en parcelas de hasta 5.000 m².</span>
+					</p>
+					<a href="#contacto" class="inline-block bg-yellow-400 text-blue-900 px-10 py-4 rounded-lg font-bold shadow-lg hover:bg-yellow-300 transition duration-300 text-center text-lg">
+						Solicita tu asesoría gratuita ahora
+					</a>
+				</div>
+				<div class="md:w-1/2 flex justify-center">
+					<div class="relative rounded-3xl overflow-hidden shadow-2xl w-[340px] h-[260px] md:w-[420px] md:h-[320px]">
+						<img 
+							src="/images/smart-home.jpg" 
+							alt="Casa inteligente y conectada" 
+							class="object-cover w-full h-full transition duration-300 dark:brightness-75"
+						/>
+						<div class="absolute inset-0 rounded-3xl border-4 border-white/30 dark:border-gray-700 pointer-events-none"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- POR QUÉ ELEGIRNOS -->
+		<section class="py-16 bg-white dark:bg-gray-900">
+			<div class="container mx-auto px-6">
+				<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10">¿Por qué elegir DMT Smart Home?</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+						<div class="text-5xl mb-4">🔒</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Seguridad y confianza</h3>
+						<p class="text-gray-600 dark:text-gray-300">Trabajamos con protocolos y marcas reconocidas mundialmente. Tu privacidad y la de tu familia es nuestra prioridad.</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+						<div class="text-5xl mb-4">🌐</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Redes e internet sin límites</h3>
+						<p class="text-gray-600 dark:text-gray-300">Diseñamos e instalamos redes WiFi y cableadas para cubrir grandes extensiones, sin puntos ciegos ni múltiples redes.</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+						<div class="text-5xl mb-4">🏡</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Domótica a tu medida</h3>
+						<p class="text-gray-600 dark:text-gray-300">Automatiza luces, climatización, persianas, riego, acceso y más. Todo desde tu móvil o con tu voz.</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+						<div class="text-5xl mb-4">🔊</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Sonido arquitectónico</h3>
+						<p class="text-gray-600 dark:text-gray-300">Instalamos sistemas de audio que se integran con la arquitectura de tu hogar, para una experiencia sonora premium y discreta.</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+						<div class="text-5xl mb-4">🔑</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Control de accesos</h3>
+						<p class="text-gray-600 dark:text-gray-300">Soluciones inteligentes para portones, puertas y cámaras. Controla y monitorea quién entra y sale, estés donde estés.</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow p-8 text-center">
+						<div class="text-5xl mb-4">🤝</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Acompañamiento total</h3>
+						<p class="text-gray-600 dark:text-gray-300">Te asesoramos desde el diseño hasta la puesta en marcha y soporte postventa. ¡Tu proyecto es nuestro compromiso!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SERVICIOS DESTACADOS -->
+		<section class="py-16 bg-gray-50 dark:bg-gray-800">
+			<div class="container mx-auto px-6">
+				<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10">Nuestros Servicios</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<a href="/automatizacion-residencial" class="block bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-700 p-8 hover:shadow-xl dark:hover:shadow-gray-600 transition duration-300 text-center group focus:outline-none focus:ring-2 focus:ring-blue-500">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🏠</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Automatización Residencial</h3>
+						<p class="text-gray-600 dark:text-gray-300">Controla tu hogar desde tu smartphone o voz. Comodidad, eficiencia y seguridad en un solo sistema.</p>
+					</a>
+					<a href="/seguridad-inteligente" class="block bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-700 p-8 hover:shadow-xl dark:hover:shadow-gray-600 transition duration-300 text-center group focus:outline-none focus:ring-2 focus:ring-blue-500">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔒</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Seguridad Inteligente</h3>
+						<p class="text-gray-600 dark:text-gray-300">Vigilancia, alarmas y control de acceso para tu tranquilidad y la de tu familia.</p>
+					</a>
+					<a href="/eficiencia-energetica" class="block bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-700 p-8 hover:shadow-xl dark:hover:shadow-gray-600 transition duration-300 text-center group focus:outline-none focus:ring-2 focus:ring-blue-500">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Eficiencia Energética</h3>
+						<p class="text-gray-600 dark:text-gray-300">Ahorra energía y dinero con tecnología inteligente y monitoreo en tiempo real.</p>
+					</a>
+					<a href="/integracion-total" class="block bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-700 p-8 hover:shadow-xl dark:hover:shadow-gray-600 transition duration-300 text-center group focus:outline-none focus:ring-2 focus:ring-blue-500">
+						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔄</div>
+						<h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Integración Total</h3>
+						<p class="text-gray-600 dark:text-gray-300">Todos tus sistemas y dispositivos conectados y centralizados en una sola plataforma.</p>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA FINAL / CONTACTO -->
+		<section id="contacto" class="py-20 bg-blue-900 dark:bg-gray-900 text-white">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para transformar tu hogar o parcela?</h2>
+				<p class="mb-8 text-lg">Déjanos tus datos y un experto te contactará para asesorarte sin costo. ¡Haz realidad tu proyecto de domótica y conectividad!</p>
+				<a href="mailto:contacto@dmtsmarthome.cl" class="inline-block bg-yellow-400 text-blue-900 px-10 py-4 rounded-lg font-bold shadow-lg hover:bg-yellow-300 transition duration-300 text-lg">Contáctanos ahora</a>
+			</div>
+		</section>
+	</main>
 </Layout>
