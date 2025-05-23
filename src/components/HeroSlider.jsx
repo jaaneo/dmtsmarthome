@@ -42,7 +42,7 @@ export default function HeroSlider() {
   }, [current]);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full transition-all duration-700">
         {slides.map((slide, idx) => (
           <div
@@ -63,30 +63,33 @@ export default function HeroSlider() {
           ></button>
         ))}
       </div>
-      <div className="container mx-auto px-8 md:px-20 py-16 relative z-20 flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 sm:px-8 md:px-20 py-10 sm:py-16 relative z-20 flex flex-col md:flex-row items-center gap-8 md:gap-12">
         {slides.map((slide, idx) => (
           <div
             key={idx}
-            className={`w-full flex flex-col md:flex-row items-center gap-12 absolute transition-all duration-700 ${current === idx ? 'opacity-100 translate-x-0 z-20' : 'opacity-0 translate-x-10 pointer-events-none z-0'}`}
+            className={`w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 ${current === idx ? 'block md:absolute opacity-100 translate-x-0 z-20' : 'hidden md:absolute opacity-0 translate-x-10 pointer-events-none z-0'}`}
             aria-hidden={current !== idx}
+            style={{ minHeight: '350px' }}
           >
-            <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
+            <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-xl mb-8 text-blue-100 dark:text-gray-300 drop-shadow">
+              <p className="text-base sm:text-lg md:text-xl mb-8 text-blue-100 dark:text-gray-300 drop-shadow">
                 {slide.text}
               </p>
-              <a href={slide.ctaLink} className="inline-block bg-gradient-to-r from-[#FFD700] via-[#FFC300] to-[#FFB300] text-gray-900 px-10 py-4 rounded-lg font-bold shadow-lg border border-yellow-400 hover:from-[#FFEF8E] hover:to-[#FFD700] hover:shadow-xl hover:border-yellow-500 transition duration-300 text-center text-lg">
+              <a href={slide.ctaLink} className="inline-block bg-gradient-to-r from-[#FFD700] via-[#FFC300] to-[#FFB300] text-gray-900 px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-bold shadow-lg border border-yellow-400 hover:from-[#FFEF8E] hover:to-[#FFD700] hover:shadow-xl hover:border-yellow-500 transition duration-300 text-center text-base sm:text-lg">
                 {slide.cta}
               </a>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[340px] h-[260px] md:w-[420px] md:h-[320px]">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[260px] h-[180px] sm:w-[340px] sm:h-[260px] md:w-[420px] md:h-[320px] bg-white/10">
                 <img
                   src={slide.img}
                   alt={slide.title}
                   className="object-cover w-full h-full transition duration-300 dark:brightness-75"
+                  loading="lazy"
+                  onError={e => { e.target.style.display = 'none'; }}
                 />
                 <div className="absolute inset-0 rounded-3xl border-4 border-white/30 dark:border-gray-700 pointer-events-none"></div>
               </div>
@@ -94,10 +97,10 @@ export default function HeroSlider() {
           </div>
         ))}
         {/* Flechas */}
-        <button onClick={prev} className="absolute left-[-32px] md:left-[-56px] top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 md:p-3 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
+        <button onClick={prev} className="hidden md:flex absolute left-[-32px] md:left-[-56px] top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 md:p-3 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
           <svg className="w-6 h-6 md:w-8 md:h-8 text-blue-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
         </button>
-        <button onClick={next} className="absolute right-[-32px] md:right-[-56px] top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 md:p-3 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
+        <button onClick={next} className="hidden md:flex absolute right-[-32px] md:right-[-56px] top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 md:p-3 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
           <svg className="w-6 h-6 md:w-8 md:h-8 text-blue-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
