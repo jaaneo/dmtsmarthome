@@ -18,9 +18,9 @@ const slides = [
     bg: 'from-green-800 via-green-600 to-green-400',
   },
   {
-    title: 'Sonido y seguridad arquitectónica',
-    text: 'Audio premium y sistemas de acceso que se integran con la arquitectura de tu hogar. Seguridad y diseño en armonía.',
-    img: '/images/security.jpg',
+    title: 'Acompañamiento total',
+    text: 'Te asesoramos desde el diseño hasta la puesta en marcha y soporte postventa.',
+    img: '/images/asesoria.jpg',
     cta: 'Ver soluciones de seguridad',
     ctaLink: '/seguridad-inteligente',
     bg: 'from-purple-900 via-pink-700 to-pink-400',
@@ -42,7 +42,7 @@ export default function HeroSlider() {
   }, [current]);
 
   return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full transition-all duration-700">
         {slides.map((slide, idx) => (
           <div
@@ -52,7 +52,18 @@ export default function HeroSlider() {
           />
         ))}
       </div>
-      <div className="container mx-auto px-6 py-16 relative z-20 flex flex-col md:flex-row items-center gap-12">
+      {/* Indicadores SIEMPRE abajo del hero */}
+      <div className="absolute left-0 right-0 bottom-4 md:bottom-8 flex justify-center gap-2 z-30 pointer-events-none">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => goTo(idx)}
+            className={`pointer-events-auto w-3 h-3 rounded-full ${current === idx ? 'bg-yellow-400' : 'bg-white/60 dark:bg-gray-700'} border-2 border-white dark:border-gray-800 transition`}
+            aria-label={`Ir al slide ${idx + 1}`}
+          ></button>
+        ))}
+      </div>
+      <div className="container mx-auto px-8 md:px-20 py-16 relative z-20 flex flex-col md:flex-row items-center gap-12">
         {slides.map((slide, idx) => (
           <div
             key={idx}
@@ -66,7 +77,7 @@ export default function HeroSlider() {
               <p className="text-lg md:text-xl mb-8 text-blue-100 dark:text-gray-300 drop-shadow">
                 {slide.text}
               </p>
-              <a href={slide.ctaLink} className="inline-block bg-yellow-400 text-blue-900 px-10 py-4 rounded-lg font-bold shadow-lg hover:bg-yellow-300 transition duration-300 text-center text-lg">
+              <a href={slide.ctaLink} className="inline-block bg-gradient-to-r from-[#FFD700] via-[#FFC300] to-[#FFB300] text-gray-900 px-10 py-4 rounded-lg font-bold shadow-lg border border-yellow-400 hover:from-[#FFEF8E] hover:to-[#FFD700] hover:shadow-xl hover:border-yellow-500 transition duration-300 text-center text-lg">
                 {slide.cta}
               </a>
             </div>
@@ -83,23 +94,12 @@ export default function HeroSlider() {
           </div>
         ))}
         {/* Flechas */}
-        <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
-          <svg className="w-6 h-6 text-blue-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+        <button onClick={prev} className="absolute left-[-32px] md:left-[-56px] top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 md:p-3 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
+          <svg className="w-6 h-6 md:w-8 md:h-8 text-blue-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
         </button>
-        <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
-          <svg className="w-6 h-6 text-blue-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+        <button onClick={next} className="absolute right-[-32px] md:right-[-56px] top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 p-2 md:p-3 rounded-full shadow hover:bg-white dark:hover:bg-gray-700 transition z-30">
+          <svg className="w-6 h-6 md:w-8 md:h-8 text-blue-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
         </button>
-        {/* Indicadores */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goTo(idx)}
-              className={`w-3 h-3 rounded-full ${current === idx ? 'bg-yellow-400' : 'bg-white/60 dark:bg-gray-700'} border-2 border-white dark:border-gray-800 transition`}
-              aria-label={`Ir al slide ${idx + 1}`}
-            ></button>
-          ))}
-        </div>
       </div>
     </section>
   );
