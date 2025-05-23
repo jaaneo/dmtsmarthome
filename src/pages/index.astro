@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroSlider from '../components/HeroSlider.jsx';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Contact from '../components/Contact.astro';
@@ -10,6 +11,7 @@ import Contact from '../components/Contact.astro';
 
 <Layout>
 	<main>
+		<HeroSlider client:load />
 		<!-- HERO MEJORADO -->
 		<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-white min-h-[70vh] flex items-center">
 			<div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
