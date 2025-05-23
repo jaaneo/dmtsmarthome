@@ -42,7 +42,7 @@ export default function HeroSlider() {
   }, [current]);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-[70vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full transition-all duration-700">
         {slides.map((slide, idx) => (
           <div
@@ -67,7 +67,7 @@ export default function HeroSlider() {
         {slides.map((slide, idx) => (
           <div
             key={idx}
-            className={`w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 ${current === idx ? 'block md:absolute opacity-100 translate-x-0 z-20' : 'hidden md:absolute opacity-0 translate-x-10 pointer-events-none z-0'}`}
+            className={`w-full flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 ${current === idx ? 'block md:absolute opacity-100 translate-x-0 z-20' : 'hidden md:absolute opacity-0 translate-x-10 pointer-events-none z-0'}`}
             aria-hidden={current !== idx}
             style={{ minHeight: '350px' }}
           >
